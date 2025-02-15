@@ -8,7 +8,7 @@ def emotion_detector(text_to_analyse):
     
     response = requests.post(url, json=payload, headers=headers)
     
-    if response.status_code == 200:
+    if response.status_code == 400:
         response_json = response.json()
         
         if "emotionPredictions" in response_json and len(response_json["emotionPredictions"]) > 0:
